@@ -70,7 +70,8 @@ docker build -t cuda9.0base:latest . # flask app container build
 
 # docker run an image
 docker run -d -v /webroot:/var/www/html -p 9081:80 --name nginx_php_1 nginx_php_image # run nginx-php app container
-docker run -d -p 5000:5000 flask-tutorial # run flask app container
+docker run -d -p 5000:5000 --name flask-app flask-tutorial # run flask app container
+docker run -d -p 5000:5000 --name flask-app1-ctn flask-app1
 docker run -d cuda9.0base -p 6000:80
 docker run -d tensorflow/tensorflow  
 
